@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import  "../css/transction.css";
-import MakePayment from './MakePayment';
+import React, { useEffect, useState } from "react";
+import "../css/transction.css";
+import MakePayment from "./MakePayment";
 
 const Transaction = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0].split('-')[0]);
-  const [amount, setAmount] = useState(0)
-  const [currentmonth, setCurrentMonth] = useState("")
-  const [transactionDetails,setTransactionDetails]=useState([])
-
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split("T")[0].split("-")[0]
+  );
+  const [amount, setAmount] = useState(0);
+  const [currentmonth, setCurrentMonth] = useState("");
+  const [transactionDetails, setTransactionDetails] = useState([]);
+  const [filteredTransactionDetails, setFilteredTransactionDetails] = useState(
+    []
+  );
+  const [disableMonth, setDisableMonth] = useState([])
 
   const generateDateOptions = () => {
     const currentDate = new Date();
@@ -17,7 +22,10 @@ const Transaction = () => {
     let currentDateIter = new Date(currentDate);
 
     while (currentDateIter.getFullYear() >= fiveYearsAgo.getFullYear()) {
-      const optionValue = currentDateIter.toISOString().split('T')[0].split('-')[0]; // Extract only the year
+      const optionValue = currentDateIter
+        .toISOString()
+        .split("T")[0]
+        .split("-")[0]; // Extract only the year
       dateOptions.push(optionValue);
       currentDateIter.setFullYear(currentDateIter.getFullYear() - 1);
     }
@@ -27,35 +35,80 @@ const Transaction = () => {
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
+    const selectedYear = event.target.value;
+    // const storedObjectData = localStorage.getItem("transction");
+    var filteredTransactions = [];
+    for (let index = 0; index < transactionDetails.length; index++) {
+      const element = transactionDetails[index];
+      if (element.dateOfTransction.match(/\d{4}/)[0] == selectedYear) {
+        filteredTransactions.push(element);
+      }
+    }
+    setFilteredTransactionDetails(filteredTransactions);
   };
 
   const months = [
-    'January', 'February', 'March', 'April',
-    'May', 'June', 'July', 'August',
-    'September', 'October', 'November', 'December'
+    1,2,3,4,5,6,7,8,9,10,11,12
   ];
 
- 
   useEffect(() => {
     const currentDate = new Date();
     const currentMonthName = months[currentDate.getMonth()];
-    setCurrentMonth(currentMonthName)
     console.log(currentmonth);
-    
+
     const storedObjectData = localStorage.getItem("transction");
     const parsedObjectData = JSON.parse(storedObjectData);
-      setTransactionDetails(JSON.parse(storedObjectData));
-      // console.log(parsedObjectData);
-      
+    setTransactionDetails(JSON.parse(storedObjectData));
+    var filteredTransactions = [];
+    for (let index = 0; index < transactionDetails.length; index++) {
+      const element = transactionDetails[index];
+      if (
+        element.dateOfTransction.match(/\d{4}/)[0] == new Date().getFullYear()
+      ) {
+        filteredTransactions.push(element);
+      }
+    }
+    setFilteredTransactionDetails(filteredTransactions);
+    setDisableMonth(filteredTransactionDetails.map(transaction => transaction.month))
+ 
+  }, []);
 
-  },[]);
- if (transactionDetails.length != 0) {
-  
-  console.log("sonu: "+transactionDetails.includes(months));
-}
+  //test the code
 
+  const disabledMonths = disableMonth;
+  const renderMonthCells = () => {
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    const handleMonthClick = (month) => {
+      // Handle the clicked month
+      console.log('Clicked Month:', month);
+    };
+
+    return months.map((month, index) => {
+      const monthValue = index + 1;
+      const isDisabled = disabledMonths.includes(monthValue);
+      const transaction = filteredTransactionDetails.find(item => item.month === monthValue);
+      console.log(transaction);
+      const amount = transaction ? transaction.amount : 0;
+
+      return (
+        <td
+          key={monthValue}
+          onClick={() => handleMonthClick(monthValue)}
+          style={{ cursor: isDisabled ? 'not-allowed' : 'pointer', color: isDisabled ? 'gray' : 'black' }}
+        >
+          <div>{month}</div>
+          <div>{isDisabled ? "Amount: N/A" : `Amount: ${amount}`}</div>
+        </td>
+      );
+    });
+  };
+   
+  // console.log(disabledMonths);
   return (
-    transactionDetails.length != 0 ?
     <div>
       <h1>{selectedDate}</h1>
       <h1>Transaction details</h1>
@@ -67,8 +120,8 @@ const Transaction = () => {
           </option>
         ))}
       </select>
-    
-        <table>
+
+      <table>
         <tr>
           <th>Month</th>
           <th>Amount</th>
@@ -76,7 +129,7 @@ const Transaction = () => {
           <th>current Month</th>
         </tr>
         {/* (index != transactionDetails[index].month-1) */}
-        {months.map((month, index) => (
+        {/* {months.map((month, index) => (
             month != currentmonth && (index < transactionDetails.length && (index === transactionDetails[index].month-1 && index != transactionDetails[index].month-1))? <tr key={index} className='disabled-row'>
             <td>{month}</td>
             <td><input type='number' placeholder='Enter Amount' onChange={e => setAmount(e.target.value)}></input></td>
@@ -90,11 +143,159 @@ const Transaction = () => {
           <td></td>
         </tr>
         
-      ))}
+      ))} */}
 
-      </table>
+      {/* {months.map((month) => (
+        <tr>
+        <td>{month}</td>
+        <td><input type='number' placeholder='Enter Amount'  onChange={e => setAmount(e.target.value)}></input></td>
+        <td>
+        <button
+          key={month}
+          // disabled={disabledMonths.includes(month)}
+        >Pay</button>
+        </td>
           
-    </div> : ""
+        </tr>
+       
+      ))} */}
+
+{renderMonthCells()}
+
+
+        {/* {filteredTransactionDetails.map((data, index) => (
+          <>
+            {data.month === 1 ? (
+              <>
+                <td>January</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    value={data.amount}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 2 ? (
+              <>
+                <td>February</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 3 ? (
+              <>
+                <td>March</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 4 ? (
+              <>
+                <td>April</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 5 ? (
+              <>
+                <td>May</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 6 ? (
+              <>
+                <td>June</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 7 ? (
+              <>
+                <td>July</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : data.month === 8 ? (
+              <>
+                <td>August</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            ) : (
+              <>
+                <td>September</td>
+                <td>
+                  <input
+                    type="number"
+                    placeholder="Enter Amount"
+                    onChange={(e) => setAmount(e.target.value)}
+                  ></input>
+                </td>
+                <td>
+                  <MakePayment amount={amount}></MakePayment>
+                </td>
+              </>
+            )}
+          </>
+        ))} */}
+      </table>
+    </div>
   );
 };
 
