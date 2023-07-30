@@ -1,0 +1,50 @@
+.customImage {
+    background-color: #fff;
+}
+.customImage #portfolio_flters{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.customImage #portfolio_flters li{
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 5px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    color: #444444;
+    transition: all 0.3s;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    
+}
+.customImage #portfolio_flters li:hover{
+    background: #47b2e4;
+    color: #fff;
+}
+li.filter_active {
+    background: #47b2e4;
+    color: #fff;
+}
+#galleryBody{
+   background-color: #fff;
+
+}
+#photo>img{
+    height: 250px;
+    width: 250px;
+   padding-top: 10px;
+   margin-left: 15px;
+   margin-right: 10px;
+   border-radius: 20px;
+   box-shadow: black;
+   
+
+}
+#photo>img:hover{
+    transform: scale(1.1);
+    transition: 2s;
+}
+
+

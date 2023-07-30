@@ -1,0 +1,17 @@
+.footer{
+    background-color: black;
+    height: 20vh;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h6{
+    color: #fff;
+    text-align: center;
+}
+.footer h6 p{
+    color: red;
+    margin-top: 10px;
+}
+/* &rarr; &copy; &larr;  */

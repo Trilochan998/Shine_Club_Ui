@@ -1,0 +1,61 @@
+.dev{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    
+    /* background-color: black; */
+    background: url('../testImage/pbg.jpg');
+}
+.lg{
+    width: 50vh;
+    height: 60vh;
+    background: rgb(228, 236, 255);
+     margin-left: 40%;
+     border-radius: 10px;
+}
+.lg{
+    box-shadow: 0px 2px 2px 2px rgb(133, 131, 131)
+
+}
+
+.login{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.login input{
+    border: 1px solid #ccc;
+    display: block;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-family: "Muli-Bold";
+    background: none;
+    box-shadow: 20px black;
+
+}
+.login button{
+    border: none;
+    width: 140px;
+    height: 40px;
+    margin: auto;
+    margin-top: 29px;
+    cursor: pointer;
+    padding: 0;
+    background: #4e4949;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Muli-SemiBold";
+    border-radius: 50px;
+}
+.login button{
+    margin-left: 50px;
+    margin-bottom: 10px;
+
+}
+.remember-forgot span{
+    padding:10px;
+
+}

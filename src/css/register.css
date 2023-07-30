@@ -1,0 +1,124 @@
+
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    /* background-color: white; */
+    background: url('../testImage/bg-image.jpg');
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inner{
+    min-width: 850px;
+    margin: auto;
+    padding-top: 68px;
+    padding-bottom: 48px;
+    background: url(../testImage/image1_Copy.jpg);
+    border-radius: 50px;
+}
+form {
+    width: 50%;
+    padding-left: 45px;
+}
+.form-control1 {
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-family: "Muli-Bold";
+    background: none;
+}
+
+input, textarea, select, button {
+    font-family: "Muli-Regular";
+    color: #333;
+    font-size: 13px;
+}
+
+.inner h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Muli-Bold";
+    text-align: center;
+    margin-bottom: 32px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+}
+.form-group {
+    display: flex;
+}
+.form-group .form-wrapper {
+    margin-right:20px;
+    padding: 15px;
+}
+.form-group .form-wrapper {
+    width: 50%;
+}
+.form-wrapper {
+    margin-bottom: 17px;
+}
+.checkbox {
+    position: relative;
+}
+.img{
+    min-height: 10vh;
+    background-size: 0;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;   
+}
+.register_btn {
+    border: none;
+    width: 152px;
+    height: 40px;
+    margin: auto;
+    margin-top: 29px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #ae3c33;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Muli-SemiBold";
+    border-radius: 50px;
+    overflow: hidden;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+select{
+    width: 100px;
+    border-radius: 50px;
+    height: 40px;
+    background: none;
+}
+select option {
+    /* color: red; */
+    background-color: lightgray;
+  }
+  select option {
+    font-size: 16px;
+    border: 1px solid gray;
+  }
+ 
+
+
+

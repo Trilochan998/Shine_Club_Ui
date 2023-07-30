@@ -1,0 +1,125 @@
+
+#myUser{
+    /* height: 100vh;
+    width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    
+    /* background: linear-gradient(rgba(194, 236, 172, 0.524),rgb(20, 16, 16)); */
+
+}
+#cards{
+    /* height: 250px;
+    width: 400px; */
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    word-break: break-word;
+    margin-top: 30px;
+    /* box-shadow: 5px 5px 10px rgb(127, 149, 238); */
+    /* background:linear-gradient(rgba(198, 41, 41, 0.556),rgb(0, 6, 128)) */
+
+}
+#cards #member_icon{
+    background-color: white;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    position: relative!important;
+    margin: -70px 30px 0 30px;
+    height: 150px;
+    padding-left: 10px;
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px rgb(35, 35, 37);
+    color: black;
+}
+
+
+#cards #member_icon #icon i{
+    margin-left: 70px;
+    position: relative!important;
+    margin: -70px 30px 0 30px;
+}
+#cards #image_section:hover{
+    transform: scale(1.1);
+    transition: 2s;
+    background-color: skyblue;
+}
+#cards:hover{
+    /* transform: scale(1.1); */
+    transition: 2s;
+}
+#cards>table{
+    padding: 10px;
+
+}
+#cards>table h3{
+    padding-left: 20px;
+    color: rgb(18, 19, 18);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#cards td{
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    
+}
+#cards td >button>a{
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .leftDiv,
+  .rightDiv {
+    flex: 1;
+    height: 100px; /* Set the desired height */
+    background-color: #ccc; /* Set the desired background color */
+  }
+  
+  .roundIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    border-radius: 50%; /* Make it round */
+    background-color: #f00; /* Set the desired background color */
+  }
+
+  .wrapper {
+    
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background: red;
+}
+
+.div1 {
+    margin: auto;
+}
+
+
+/* @keyframes keyframeName{
+    0%{
+        (-)
+    }
+    100%{
+        (0)
+    }
+} */

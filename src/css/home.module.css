@@ -1,0 +1,71 @@
+
+ .home h1{
+    color: white;
+
+}
+ .home h2{
+    color: white;
+
+}
+
+.home article {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 5px;
+    width:100% ;
+    height: 92vh;
+}
+.home article div{
+    margin-top: 200px;
+    margin-left: 75px;
+}
+.home #about{
+    height:50vh ;
+    background-color:#fff;
+    color: rgb(28, 27, 27);
+}
+    
+
+.home article div a:hover{
+    background: #cc1616; 
+    border-color: #cc1616;
+}
+
+.home article div a:hover{
+    text-decoration: none;
+}
+.home article div a{
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 10px 28px;
+    transition: 0.5s;
+    border: 2px solid #fff;
+    color: #fff;
+}
+.navLink {
+    margin-right: 70px; /* Adds more space on the right side of each link */
+  }
+  .basic-navbar-nav:hover{
+    color: rgb(18, 18, 239);
+  }
+#logo{
+  height: 80px;
+    width: 16%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+
+}
+
+#logo>img{
+    color: bisque;
+    align-items: center;
+    border-radius: 30px;
+    margin-right: 50px;
+}
+  
+
+

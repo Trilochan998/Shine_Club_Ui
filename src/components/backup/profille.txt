@@ -1,0 +1,209 @@
+<>
+    { sessionStorage.getItem('isLoggedIn') ? (
+      <div className='wrapper'>
+      <div className="parent-div">
+        <div className="child-div-profilePic">
+          <img src={`data:image/jpg;base64,${image}`} alt='profile-pic'></img>
+          <li><FcEditImage title='edit image'/></li>
+        </div>
+        <div className="child-div-profile">
+        <div className="student-profile">
+            <p className="student-name">{objectData.memberName}</p>
+            <p className="student-major"> {addressObject.village}, {addressObject.city}, {addressObject.district}, {addressObject.pin}</p>
+            <p className="student-dob"> {objectData.dob}</p>
+            <p className="student-phone">{objectData.mobileNo}</p>
+            <p className="student-email">{objectData.email}</p>
+            <p className="student-doj">14/03/2013</p>
+            <button className='profile-edit-btn'>
+              Edit
+          </button>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+      
+    ) : (
+      window.location.href = '/login'
+    )}
+
+    
+    </>
+
+
+
+
+
+
+
+
+
+    import React, { useEffect, useState } from "react";
+import "../css/profile.css";
+
+const Profile = () => {
+  const [objectData, setObjectData] = useState({});
+  const [addressObject, setAddressObject] = useState({});
+  const [image, setImage] = useState({});
+
+  useEffect(() => {
+    // Retrieving the object from localStorage when the component mounts
+    const storedObjectData = localStorage.getItem("user_login_data");
+    const addressData = localStorage.getItem("address");
+    if (storedObjectData) {
+      const parsedObjectData = JSON.parse(storedObjectData);
+      setObjectData(parsedObjectData);
+      const parsedAddressObject = JSON.parse(addressData);
+      setAddressObject(parsedAddressObject);
+      setImage(localStorage.getItem("image"));
+    }
+  }, []);
+
+  return (
+    <>
+      {sessionStorage.getItem("isLoggedIn") ? (
+        <section className="bd">
+          <article className="portion">
+            <div className="left-portion">
+              <div className="profile-section">
+                <img
+                  src={`data:image/jpg;base64,${image}`}
+                  alt="profile-pic"
+                ></img>
+                <button
+                  className="edit-profile"
+                >
+                  edit
+                </button>
+              </div>
+              <div id="myAccount">
+                <ul>
+                  <a href="/editAccount">
+                    <i class="fa-solid fa-house"></i>
+                    <li>Edit-Account</li>
+                  </a>
+
+                  <a href="/changePassword">
+                    <i class="fa-solid fa-key"></i>
+                    <li>Change Password</li>
+                  </a>
+
+                  <a href="/transaction">
+                    <i class="fa-sharp fa-solid fa-building-columns"></i>
+                    <li>Transaction</li>
+                  </a>
+                  <a href="##">
+                    <i class="fa-solid fa-bell"></i>
+                    <li>Notificaton</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+            <div className="right-portion">
+              <div class="inner-portion">
+                <form>
+                  <div class="form-wrapper">
+                    <label for="">Account Holder Name</label>
+                    <input
+                      type="text"
+                      name="memberName"
+                      class="form-control1"
+                      value={objectData.memberName}
+                    />
+                  </div>
+                  <div class="form-wrapper">
+                    <label for="">Email</label>
+                    <input
+                      type="text"
+                      class="form-control1"
+                      name="memberLastName"
+                      value={objectData.email}
+                    />
+                  </div>
+                  <div class="form-wrapper">
+                    <label for="">Phone No</label>
+                    <input
+                      type="number"
+                      class="form-control1"
+                      name="mobileNo"
+                      value={objectData.mobileNo}
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-address">
+                      <label for="">Village </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="village"
+                        value={addressObject.village}
+                      />
+                    </div>
+                    <div class="form-address">
+                      <label for="">City </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="city"
+                        value={addressObject.city}
+                      />
+                    </div>
+                    <div class="form-address">
+                      <label for="">District </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="district"
+                        value={addressObject.district}
+                      />
+                    </div>
+                    <div class="form-address">
+                      <label for="">pin </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="pin"
+                        value={addressObject.pin}
+                      />
+                    </div>
+                  </div>
+
+                  {/* <div>
+                    <h6>Address</h6>
+                    <p> {addressObject.village}, {addressObject.city}, {addressObject.district}, {addressObject.pin}</p>
+                  </div> */}
+
+                  <div class="form-group">
+                    <div class="form-user">
+                      <label for="">DOB </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="dob"
+                        value={objectData.dob}
+                      />
+                    </div>
+                    <div class="form-user">
+                      <label for="">Gender </label>
+                      <input
+                        type="text"
+                        class="form-control1"
+                        name="gender"
+                        value={objectData.gender}
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </article>
+        </section>
+      ) : (
+        (window.location.href = "/login")
+      )}
+    </>
+  );
+};
+
+export default Profile;

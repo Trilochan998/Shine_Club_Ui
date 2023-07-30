@@ -1,0 +1,27 @@
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MzcxNTk4ODE2IiwiZXhwIjoxNjg3MDQxMzYwLCJpYXQiOjE2ODcwMDUzNjB9.Y2LIb7wH-AXlZ0qGxLzCz4W7sEsqIY4ffQ1_zzHtIBA",
+    "member": {
+        "memberId": 4,
+        "memberName": "kutli",
+        "mobileNo": "6371598816",
+        "email": "sonunigambar5@gmail.com",
+        "gender": "male",
+        "dob": "1995-05-14",
+        "password": "kutli",
+        "imagePath": "C:\\new_folder_path\\Screenshot (6).png",
+        "address": {
+            "addressId": 13,
+            "village": "hatiadiha",
+            "city": "rupsa",
+            "district": "bls",
+            "pin": 756028
+        },
+        "transction": [
+            {
+                "transctionId": 14,
+                "dateOfTransction": null,
+                "tranctionDetails": "nothing"
+            }
+        ]
+    }
+}
