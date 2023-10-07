@@ -1,4 +1,36 @@
-
+/* Small screens */
+@media (max-width: 576px) {
+    .navLink {
+      margin-right: 20px;
+    }
+    .home article div {
+      margin-top: 100px;
+      margin-left: 20px;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 577px) and (max-width: 991px) {
+    .navLink {
+      margin-right: 40px;
+    }
+    .home article div {
+      margin-top: 150px;
+      margin-left: 50px;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 992px) {
+    .navLink {
+      margin-right: 70px;
+    }
+    .home article div {
+      margin-top: 200px;
+      margin-left: 75px;
+    }
+  }
+  
  .home h1{
     color: white;
 
@@ -66,6 +98,14 @@
     border-radius: 30px;
     margin-right: 50px;
 }
+/* home.module.css */
+.navbarContainer {
+    height: 80px;
+  }
+.bg-white {
+  background-color: #0096A4;
+}  
+
   
 
 

@@ -1,6 +1,6 @@
 .footer{
-    background-color: black;
-    height: 20vh;
+    background-color: #0096A4;
+    height: 10vh;
     display: flex;
   justify-content: center;
   align-items: center;
@@ -9,9 +9,10 @@
 .footer h6{
     color: #fff;
     text-align: center;
+    margin-top: 15px;
 }
 .footer h6 p{
-    color: red;
+    color: white;
     margin-top: 10px;
 }
 /* &rarr; &copy; &larr;  */

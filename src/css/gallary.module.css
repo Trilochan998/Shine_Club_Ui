@@ -31,7 +31,7 @@ li.filter_active {
    background-color: #fff;
 
 }
-#photo>img{
+#photo>img,iframe{
     height: 250px;
     width: 250px;
    padding-top: 10px;
@@ -46,5 +46,6 @@ li.filter_active {
     transform: scale(1.1);
     transition: 2s;
 }
+
 
 

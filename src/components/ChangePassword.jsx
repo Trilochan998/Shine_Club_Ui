@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ChangePassword = () => {
     const [password, setpassword] = useState(null)
@@ -7,16 +7,20 @@ const ChangePassword = () => {
     const [mobileNo, setMobileNo] = useState(null)
     const [msg, setMsg] = useState(null)
 
+    const [formErrors, setFormErrors] = useState({
+      password: '',
+      conFirmPassword:''
+    });
 
 
     const submitForm = async () => {
-        const url = new URL(window.location.href);
+        // const url = new URL(window.location.href);
 
     // Extract the desired parameter from the URL
-    setMobileNo(url.searchParams.get('phoneNo'));
+    // setMobileNo(url.searchParams.get('phoneNo'));
 
     const change_pwd_payload = {
-        "mobileNo": "6371598816",
+        "mobileNo": mobileNo,
         "password": password,
         "confirmPassword": conFirmPassword
     }
@@ -27,7 +31,7 @@ const ChangePassword = () => {
           
             if (response.status === 200) {
                 setMsg('password successfully changed')
-
+                localStorage.removeItem('member_mobile_no');
             }
             window.location.href = '/login'
           }  
@@ -38,15 +42,70 @@ const ChangePassword = () => {
         }
     }
 
+    
+   const handleChange = (event) =>{
+    let key = event.target.name
+    if (key === "password") {
+      setpassword(event.target.value)
+    }else{
+      setConfirmPassword(event.target.value)
+    }
+// ====================================================
+    const { name, value } = event.target;
+    // Perform validation
+    validateField(name, value);
+
+   }
+
+   const validateField = (name, value) => {
+    const errors = { ...formErrors };
+    // Validation logic for each field
+    switch (name) {
+      case "password":
+          if (value.trim() === "") {
+            errors.password = "Password Is Required";
+          } else {
+            delete errors.password; // Clear the error if valid
+          }
+          break;
+
+          case "conFirmPassword":
+            if (value.trim() === "") {
+              errors.conFirmPassword = "ConfirmPassword Is Required";
+            } else {
+              delete errors.conFirmPassword; // Clear the error if valid
+            }
+            break;
+  
+      default:
+        break;
+    }
+    setFormErrors(errors);
+  };
+
+const isLoginFormValid = password === null || conFirmPassword === null || password === "" || conFirmPassword === "" && (formErrors.password || formErrors.confirmPassword);
+
+useEffect(() => {
+  const memberMobileNo = localStorage.getItem("member_mobile_no");
+    const phone_no = JSON.parse(memberMobileNo);
+    setMobileNo(phone_no)
+}, []);
+
   return (
     <section className="dev">
     <form className="lg">
    
       <div className="login">
-        <input type="text" required placeholder="Enter New Password" onChange={e => setpassword(e.target.value)}/>
+        <input type="text" name='password' required placeholder="Enter New Password" onChange={e => handleChange(e)}/>
+        {formErrors.password && (
+          <p className="error">{formErrors.password}</p>
+        )}
         <br></br>
-        <input type="text" required placeholder="Enter Confirm Password" onChange={e => setConfirmPassword(e.target.value)}/>
-        <button type='button' onClick={submitForm}>Change Password</button>
+        <input type="text" name='conFirmPassword' required placeholder="Enter Confirm Password" onChange={e => handleChange(e)}/>
+        {formErrors.conFirmPassword && (
+          <p className="error">{formErrors.conFirmPassword}</p>
+        )}
+        <button type='button'className='btn btn-primary' onClick={submitForm} disabled={isLoginFormValid}>Change Password</button>
     </div>
     {msg ? (
         <p>{msg}</p>

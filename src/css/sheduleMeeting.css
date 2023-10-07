@@ -1,0 +1,143 @@
+/* Add this CSS to your stylesheet */
+.agenda-model {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background overlay */
+    /* z-index: 999;  */
+  }
+  
+  .agenda-modal-content{
+    width: 80vh;
+    height:40vh ; /* Adjust the width as per your requirements */
+    background-color: white;
+    /* Add any other styles you need for the modal */
+  }
+  button.agenda-btn{
+    margin-top: 31vh;
+    background-color: #a6f4e8;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .agenda-modal-content {
+      width: 90%; /* Adjust the width for mobile */
+      height: auto; /* Let the content determine the height */
+    }
+  
+    button.agenda-btn {
+      margin-top: 20px; /* Adjust the margin for mobile */
+      margin-left: auto; /* Center horizontally on mobile */
+      margin-right: auto; /* Center horizontally on mobile */
+      width: 100%; /* Make the button full width on mobile */
+    }
+  }
+  .agenda_title{
+    color: green;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .agenda_title:hover{
+    color: red;
+  }
+  .meeting{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* width: 100%; */
+    /* border-collapse: collapse; */
+    margin-top: 15px;
+  }
+
+  .meeting th, .meeting td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    /* padding: 5px; */
+  }
+  .meeting th {
+    background-color: black;
+    color: white;
+  }
+
+  .meeting-modal1 {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .meeting-modal-content1 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+  }
+  
+  .meeting-modal1 h2 {
+    margin-top: 0;
+  }
+  .meeting-modal-content1 button {
+  background-color: rgb(70, 159, 238);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    
+
+  }
+ 
+  .meeting-modal1 button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Show the modal1 when it's open */
+  .meeting-modal1.active {
+    display: flex;
+  }
+
+  .meeting-modal-content1 label,
+.meeting-modal-content1 select,
+.meeting-modal-content1 textarea,
+.meeting-modal-content1 input {
+    margin-bottom: 17px; /* Adjust the margin as needed */
+    border-radius: 5px;
+}
+.meeting-modal-content1 textarea {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+  width: 400px;
+  height: 300px;
+}
+.status-container {
+  margin-right: 30px; /* Adjust the margin as needed */
+}
+.create-meeting {
+  margin-left: 20px;
+}
+.cancel-meeting {
+  width: 100px;
+  background-color: green;
+}
+
+  

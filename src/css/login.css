@@ -6,13 +6,13 @@
     align-items: center;
     
     /* background-color: black; */
-    background: url('../testImage/pbg.jpg');
+    /* background: url('../testImage/pexels-pixabay-531756.jpg'); */
 }
 .lg{
-    width: 50vh;
-    height: 60vh;
+    width: 100vh;
+    height: 50vh;
     background: rgb(228, 236, 255);
-     margin-left: 40%;
+     margin-left: 30%;
      border-radius: 10px;
 }
 .lg{
@@ -22,10 +22,10 @@
 
 .login{
     margin-top: 50px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 .login input{
-    border: 1px solid #ccc;
+    border: 1px solid black;
     display: block;
     height: 40px;
     padding: 0 20px;
@@ -43,12 +43,15 @@
     margin-top: 29px;
     cursor: pointer;
     padding: 0;
-    background: #4e4949;
+    background: green;
     font-size: 13px;
     color: #fff;
     text-transform: uppercase;
     font-family: "Muli-SemiBold";
     border-radius: 50px;
+}
+.login button:hover{ 
+    background-color: green;
 }
 .login button{
     margin-left: 50px;
@@ -58,4 +61,25 @@
 .remember-forgot span{
     padding:10px;
 
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.member-login {
+    background-color: white;
+}
+.member-login {
+    background-color: white;
+    box-shadow: 0 0 24px rgb(20, 20, 22);
+}
+.login-btn {
+    background-color:rgb(61, 56, 56);
+}
+.flex-column {
+    margin-left: 15px;
 }

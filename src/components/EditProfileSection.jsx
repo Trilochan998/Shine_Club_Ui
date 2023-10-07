@@ -1,6 +1,9 @@
 /* eslint-disable no-undef */
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import "../css/profile.css";
 
+import Button from 'react-bootstrap/Button';
 const EditProfileSection = (props) => {
   const [memberName,setmeMeberName]=useState("")
   const [email,setEmail]=useState("")
@@ -12,6 +15,7 @@ const EditProfileSection = (props) => {
   const [dob,setDob]=useState("")
   const [gender,setGender]=useState("")
   const [isDisabled,setIsDisabled]=useState(true)
+
 
   useEffect(() => {
     // Retrieving the object from localStorage when the component mounts
@@ -37,6 +41,7 @@ const EditProfileSection = (props) => {
     // console.log(props.memberAddress);
     let memberData=(e)=>{
       setmeMeberName(e.target.value)
+      console.log(e.target.value);
    }
    let emialData=(e)=>{
     setEmail(e.target.value)
@@ -71,8 +76,50 @@ const makeDisable = () => {
   setIsDisabled(true)
 }
 
+
+ const upDateAccount=()=>{
+
+  makeDisable()
+  const memberInfo = {
+  'memberName': memberName,
+  'mobileNo': mobileNo,
+  'email': email,
+  'gender': gender,
+  'dob': dob,
+  'village': village,
+  'city': city,
+  'district':district,
+  'pin':pin
+}
+  axios.put("http://localhost:8080/updataMemberDetails",memberInfo)
+  .then(response => {
+   const responseData = response.data
+    if (response.status === 200) {
+      const memberResponse = {
+        'memberName': responseData.memberName,
+        'mobileNo': responseData.mobileNo,
+        'email': responseData.email,
+        'gender': responseData.gender,
+        'dob':responseData.dob,
+        'password':responseData.password,
+        'imagePath':responseData.imagePath
+       
+      }
+      console.log(memberResponse);
+      console.log(responseData.address);
+      localStorage.setItem('user_login_data', JSON.stringify(memberResponse));
+        localStorage.setItem('address', JSON.stringify(responseData.address));
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+ }
+
   return (
-    <form>
+      <>   
+        <h1 style={{fontFamily:'auto', padding:'20px'}}>Profile Details</h1>
+       <form id='profile'>
                   <div class="form-wrapper">
                     <label for="">Account Holder Name</label>
                     <input
@@ -101,7 +148,7 @@ const makeDisable = () => {
                       class="form-control1"
                       name="mobileNo"
                       value={mobileNo} onChange={mobileData}
-                      disabled={isDisabled}
+                      disabled='true'
                     />
                   </div>
 
@@ -141,7 +188,7 @@ const makeDisable = () => {
                       />
                     </div>
                     <div class="form-address">
-                      <label for="">pin </label>
+                      <label for="">Pin </label>
                       <input
                         type="text"
                         class="form-control1"
@@ -170,13 +217,21 @@ const makeDisable = () => {
                         class="form-control1"
                         name="gender"
                         value={gender} onChange={genderData}
-                        disabled={isDisabled}
+                        disabled='true'
                       />
                     </div>
                   </div>
-                  <button type="button" onClick={makeEnable}>Edit</button>
+                  <div className='edit-button'>
+                  {/* <button type="button" onClick={makeEnable}>Edit</button>
                   <button type="button" onClick={makeDisable}>Cancel</button>
+                  <button type="button" onClick={upDateAccount}>Update</button> */}
+                   <Button  className='btn btn-primary' onClick={makeEnable} disabled={!isDisabled}>EDIT</Button>
+                   <Button className='btn btn-warning' onClick={makeDisable} disabled={isDisabled}>CANCEL</Button>
+                   <Button className='btn btn-success' onClick={upDateAccount } disabled={isDisabled}>UPDATE</Button>
+                   </div>
                 </form>
+                </>
+
   )
 }
 

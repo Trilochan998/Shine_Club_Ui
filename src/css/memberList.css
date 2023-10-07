@@ -1,0 +1,133 @@
+/* App component styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* th {
+    color: white;
+  } */
+  
+  /* modal1 styles */
+  .modal1 {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .modal-content1 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal1 h2 {
+    margin-top: 0;
+  }
+  
+  .modal1 table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .modal1 th, .modal1 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .modal1 th {
+    background-color: #f2f2f2;
+  }
+  
+  .modal1 button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .modal1 button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Show the modal1 when it's open */
+  .modal1.active {
+    display: flex;
+  }
+  .modal-transaction{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #932534;
+  }
+  .modal-transaction:hover{
+    color: #d32f2f;
+  }
+  .transaction_tab_tr {
+    background-color: #448500;
+    color: white;
+  }
+  .transaction_tab_tr_td:hover {
+    background-color: darkgrey;
+  }
+
+  .memInfo {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    padding: 20px;
+  }
+
+  .memInfo h1 {
+    flex: 1; /* Expand to fill available space on the left */
+    margin-right: 20px; /* Add some spacing between h1 and input */
+  }
+  
+  .memInfo input {
+    /* flex: 1; Expand to fill available space on the right */
+    width: 300px;
+    border-radius: 5px;
+  }
+
+  .active-member-status {
+    background: linear-gradient(236deg,rgba(239,111,53,1) 0%,rgba(231,46,37,1) 43%,rgba(231,41,36,1) 73%,rgba(230,34,34,1) 100%);
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 80px;
+  }
+
+  .confirm-dialog button {
+    margin-top: 50px;
+    margin-left: 100px;
+    background-color:#e07736;
+  }
+  .admin-left-portion{
+    
+     background-color:white;
+  box-shadow: 0 0 24px 0 rgba(1, 1, 1, 1);
+    border: 1px white;
+  }
+  .admin-left-portion a:hover{
+    background-color: rgb(143, 143, 202);
+  }

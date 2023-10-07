@@ -17,9 +17,9 @@ const Home = () => {
         </div>
 
       </article>
-      <div id={style.about}>
+      {/* <div id={style.about}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptates, praesentium minus ipsa magni rerum magnam eligendi, distinctio expedita dolorum tenetur impedit veniam consequuntur, voluptatum cupiditate. Sit nihil sint cupiditate.
-      </div>
+      </div> */}
     </section>
 
 

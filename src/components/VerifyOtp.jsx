@@ -1,16 +1,18 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function VerifyOtp() {
+const VerifyOtp = () => {
     const [OTP, setOTP] = useState(null)
     const [userName, setUserName] = useState(null)
     const[error,setError]=useState(null)
+    
 
     const otpverify = async () => {
-        const url = new URL(window.location.href);
+        // const url = new URL(window.location.href);
 
     // Extract the desired parameter from the URL
-    setUserName(url.searchParams.get('phoneNo'));
+    // setUserName(url.searchParams.get('phoneNo'));
+
         const otp_details = {
             "userName": userName,
             "otp": OTP
@@ -19,18 +21,29 @@ function VerifyOtp() {
         try{
             setError('Please wait...')
             console.log(otp_details);
+            
         await axios.post(`${"http://localhost:8080/verify-otp"}`,otp_details)
         .then(function (response) {
             if (response.status === 200) {
                 console.log(userName);
-               const changePasswordUrl = `/changePassword?phoneNo=${encodeURIComponent(userName)}`
-                // window.location.href = changePasswordUrl
+            //    const changePasswordUrl = `/changePassword?mobileNo=${encodeURIComponent(userName)}`
+            const changePasswordUrl = `/changePassword`
+
+                window.location.href = changePasswordUrl
             }
         });}catch(error){
             if(error.response&&error.response.status===500)
             setError('Invallid otp')
         }
         }
+        
+  useEffect(() => {
+    const memberMobileNo = localStorage.getItem("member_mobile_no");
+    const phone_no = JSON.parse(memberMobileNo);
+    setUserName(phone_no)
+
+  }, []);
+
   return (
     <section className="dev">
     <form className="lg">

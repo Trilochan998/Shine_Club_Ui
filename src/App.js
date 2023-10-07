@@ -15,6 +15,10 @@ import VerifyOtp from "./components/VerifyOtp";
 import ChangePassword from "./components/ChangePassword";
 import EditAccount from "./components/EditAccount";
 import Transaction from "./components/Transaction";
+import Register from "./components/Register";
+import AdminPannel from "./components/AdminPannel";
+import SecretKey from "./components/SecretKey";
+import AdminLogin from "./components/AdminLogin";
 
 function App() {
   return (
@@ -23,18 +27,24 @@ function App() {
         <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="#home_about__1IqJ0" element={<About />} />
+          <Route path="/aboutus" element={<About />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/graphics" element={<Graphics />} />
           <Route path="/member" element={<Member />} />
           <Route path="/login" element={<Login></Login>} />
-          <Route path="/register" element={<RegisterMember />} />
+          {/* <Route path="/register" element={<RegisterMember />} /> */}
+          <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/forgotPwd" element={<ForgotPassword />} />
           <Route path="/verifyOtp" element={<VerifyOtp />} />
           <Route path="/changePassword" element={<ChangePassword />} />
           <Route path="/editAccount" element={<EditAccount />} />
           <Route path="/transaction" element={<Transaction />} />
+          <Route path="/admin" element={<AdminPannel />} />
+          <Route path="/secretKey" element={<SecretKey />} />
+          <Route path="/adminLogin" element={<AdminLogin />} />
+
+
 
 
           

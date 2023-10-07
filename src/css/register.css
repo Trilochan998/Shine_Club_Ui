@@ -10,14 +10,26 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.main_register {
+    background-color: white;
+}
+
+.main_register h2{
+    text-align: center;
+}
+.reg_type{
+    display: flex;
+   
+   justify-content: center;
+}
 
 .inner{
-    min-width: 850px;
+    width: 850px;
     margin: auto;
     padding-top: 68px;
     padding-bottom: 48px;
     background: url(../testImage/image1_Copy.jpg);
-    border-radius: 50px;
+    border-radius: 20px;
 }
 form {
     width: 50%;
@@ -84,7 +96,7 @@ p, h1, h2, h3, h4, h5, h6, ul {
     margin: auto;
     margin-top: 29px;
     cursor: pointer;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -101,8 +113,8 @@ p, h1, h2, h3, h4, h5, h6, ul {
     position: relative;
     -webkit-transition-property: color;
     transition-property: color;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    /* -webkit-transition-duration: 0.5s; */
+    /* transition-duration: 0.5s; */
 }
 select{
     width: 100px;

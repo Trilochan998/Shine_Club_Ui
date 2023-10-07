@@ -1,0 +1,68 @@
+#left_side_div{
+    /* border-top: 3px solid #47b2e4;
+    border-bottom: 3px solid #47b2e4; */
+    padding: 30px;
+    background: #fff;
+    /* width: 100%; */
+    box-shadow: 0 0 24px 0 rgba(1, 1, 1, 1);
+    margin-bottom: 20px;
+   
+    /* background-color: aquamarine; */
+    /* margin-top: 20px; */
+}
+#right_side_div{
+    /* border-top: 3px solid #47b2e4;
+    border-bottom: 3px solid #47b2e4; */
+    /* border-left: 100px solid white; */
+    padding: 30px;
+    background: #fff;
+    /* width: 100%; */
+    box-shadow: 0 0 24px 0 rgba(1, 1, 1, 1);
+    margin-bottom: 20px;
+   
+    /* margin-left: 1px; */
+    /* margin-top: 20px; */
+}
+
+.info li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.contact_btn button[type=submit]{
+    background: #47b2e4;
+    border: 0;
+    padding: 12px 34px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+    text-align: center!important;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: inset 2px 4px 4px rgba(0,0,0,.4), 0 1px rgba(255,255,255,.1);
+}
+.contact_btn button[type=submit]:hover{
+    background-color: #3096c5;
+}
+.row{
+    width: 100%;
+}
+.form-group{
+    padding: 20px;
+   
+}
+.name_email{
+    width: 128%;
+}
+.form-group input{
+    margin-left: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.form-group textarea{
+    margin-left: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+
