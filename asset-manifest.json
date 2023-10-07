@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shine_Club_Ui/static/css/main.df7e934b.css",
-    "main.js": "/Shine_Club_Ui/static/js/main.e5e12a8c.js",
+    "main.css": "/Shine_Club_Ui/static/css/main.ca0130b9.css",
+    "main.js": "/Shine_Club_Ui/static/js/main.cdbeb6f4.js",
     "static/js/787.72ba20d2.chunk.js": "/Shine_Club_Ui/static/js/787.72ba20d2.chunk.js",
     "static/media/Logo.jpg": "/Shine_Club_Ui/static/media/Logo.9e44f9773a99a4c9c074.jpg",
     "static/media/bg-image.jpg": "/Shine_Club_Ui/static/media/bg-image.f01d0feaa20469b445f0.jpg",
@@ -9,12 +9,12 @@
     "static/media/image1_Copy.jpg": "/Shine_Club_Ui/static/media/image1_Copy.a52de549ae3e063eabd5.jpg",
     "static/media/Hacker.png": "/Shine_Club_Ui/static/media/Hacker.c7e42e2d176e0239df50.png",
     "index.html": "/Shine_Club_Ui/index.html",
-    "main.df7e934b.css.map": "/Shine_Club_Ui/static/css/main.df7e934b.css.map",
-    "main.e5e12a8c.js.map": "/Shine_Club_Ui/static/js/main.e5e12a8c.js.map",
+    "main.ca0130b9.css.map": "/Shine_Club_Ui/static/css/main.ca0130b9.css.map",
+    "main.cdbeb6f4.js.map": "/Shine_Club_Ui/static/js/main.cdbeb6f4.js.map",
     "787.72ba20d2.chunk.js.map": "/Shine_Club_Ui/static/js/787.72ba20d2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df7e934b.css",
-    "static/js/main.e5e12a8c.js"
+    "static/css/main.ca0130b9.css",
+    "static/js/main.cdbeb6f4.js"
   ]
 }
