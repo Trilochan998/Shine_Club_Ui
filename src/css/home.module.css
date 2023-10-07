@@ -9,6 +9,7 @@
     }
   }
   
+  
   /* Medium screens */
   @media (min-width: 577px) and (max-width: 991px) {
     .navLink {
@@ -49,7 +50,7 @@
 }
 .home article div{
     margin-top: 200px;
-    margin-left: 75px;
+    /* margin-left: 75px; */
 }
 .home #about{
     height:50vh ;

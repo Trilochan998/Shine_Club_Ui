@@ -26,6 +26,7 @@ function App() {
       <BrowserRouter>
         <NavBar></NavBar>
         <Routes>
+          <Route path="/Shine_Club_Ui" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/contactus" element={<ContactUs />} />

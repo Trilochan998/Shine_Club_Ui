@@ -123,9 +123,8 @@ table {
     background-color:#e07736;
   }
   .admin-left-portion{
-    
      background-color:white;
-  box-shadow: 0 0 24px 0 rgba(1, 1, 1, 1);
+    box-shadow: 0 0 24px 0 rgba(1, 1, 1, 1);
     border: 1px white;
   }
   .admin-left-portion a:hover{
