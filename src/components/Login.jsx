@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/login.css";
 import axios from "axios";
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBContainer, MDBIcon, MDBInput, MDBRow } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 const Login = () => {
 
   const [mobileNo, setmobileNo] = useState(null)
@@ -153,8 +154,8 @@ const Login = () => {
             <MDBBtn disabled={isLoginFormValid} className="mb-4 px-5" color='dark' size='lg'  onClick={submitForm}>Login</MDBBtn>
            {/* <button disabled={isLoginFormValid} type='button' className="login-btn" onClick={submitForm}>Login</button> */}
 
-            <a className="small text-muted" href="/forgotPwd">Forgot password?</a>
-            <p className="mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="/register" style={{color: '#393f81'}}>Register here</a></p>
+            <Link to="/forgotPwd" className="small text-muted" >Forgot password?</Link>
+            <p className="mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <Link to="/register" style={{color: '#393f81'}}>Register here</Link></p>
 
             <div className='d-flex flex-row justify-content-start'>
               <a href="#!" className="small text-muted me-1">Terms of use.</a>

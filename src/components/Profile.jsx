@@ -6,6 +6,8 @@ import Transaction from "./Transaction";
 import Notification from "./Notification";
 import Logout from "./Logout";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Profile = () => {
   const [objectData, setObjectData] = useState({});
@@ -20,7 +22,7 @@ const Profile = () => {
    const [imagePreview, setImagePreview] = useState(null);
    const [isButtonEnabled, setButtonEnabled] = useState(false);
 
-
+   const navigate = useNavigate();
    
 
 
@@ -202,7 +204,12 @@ const Profile = () => {
           </article>
         // </section>
       ) : (
-        (window.location.href = "/login")
+        // (window.location.href = "/login")
+        setTimeout(() => {
+          navigate("/login");
+        }, 0)
+
+       
       )}
     </>
   );

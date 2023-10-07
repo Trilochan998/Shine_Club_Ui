@@ -8,6 +8,7 @@ import MemberList from './MemberList';
 import SchedulingMeeting from './SchedulingMeeting';
 import axios from 'axios';
 import LogoutAdmin from './LogoutAdmin';
+import { useNavigate } from 'react-router';
 
 const AdminPannel = () => {
 
@@ -21,6 +22,7 @@ const AdminPannel = () => {
    const[isLogout,setIsLogout]=useState(false)
    const[meetingList,setMeetingList]=useState([])
 
+   const navigate = useNavigate();
 
    const scrollItem=()=>{
     const targetElement = document.getElementById('inner-content');
@@ -142,7 +144,10 @@ const AdminPannel = () => {
        </div>
      </article>
       ) : (
-        (window.location.href = "/adminLogin")
+        // (window.location.href = "/adminLogin")
+        setTimeout(() => {
+          navigate("/adminLogin");
+        }, 0)
       )}
     </>
   )

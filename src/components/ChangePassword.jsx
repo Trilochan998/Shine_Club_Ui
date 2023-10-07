@@ -14,10 +14,6 @@ const ChangePassword = () => {
 
 
     const submitForm = async () => {
-        // const url = new URL(window.location.href);
-
-    // Extract the desired parameter from the URL
-    // setMobileNo(url.searchParams.get('phoneNo'));
 
     const change_pwd_payload = {
         "mobileNo": mobileNo,

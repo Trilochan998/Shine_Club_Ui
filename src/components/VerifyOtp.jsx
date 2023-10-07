@@ -8,10 +8,6 @@ const VerifyOtp = () => {
     
 
     const otpverify = async () => {
-        // const url = new URL(window.location.href);
-
-    // Extract the desired parameter from the URL
-    // setUserName(url.searchParams.get('phoneNo'));
 
         const otp_details = {
             "userName": userName,
